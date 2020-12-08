@@ -1,0 +1,871 @@
+/* C2SU */
+
+/* modifié et crée par Eol (Mayeul) en juin 2020 */
+
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+/* **********
+    HEADER
+   ********** */
+
+
+header {
+    width: 100%;
+    height: 9em;
+
+    background-color: #252C2F;
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    
+    z-index: 20;
+    
+}
+
+
+
+
+
+
+
+            
+
+
+
+.corpoLogo {    /* logo de la corpo */
+    width: 7.5em;
+    margin-left: 5em;
+}
+
+
+
+
+
+header h1 {
+    margin-left: .5em;
+}
+
+header h1 span {
+    font-family: 'Dancing Script', sans-serif;
+}
+
+    @media (max-width: 873px) {
+        .corpoLogo {
+            margin-left: 2em;
+        }
+    }
+
+
+    @media (max-width: 438px) {
+        
+        header h1 {
+            margin-left: 0;
+            margin-right: .7em;
+        }
+    }
+
+    @media (max-width: 411px) {
+        .corpoLogo {
+            margin-left: 1em;
+        }
+
+        header h1 {
+            margin-left: .3em;
+        }
+    }
+
+
+
+
+
+
+
+.iconHeader {   /* div avec les réseaux et le profil à droite du header */
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+    
+
+    
+
+
+
+    .socialMedia {  /* réseaux */
+        border-radius: 100vh;
+
+
+        margin-left: 1.5em;
+        margin-right: 4em;
+        
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .socialMedia a {
+        text-transform: uppercase;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 200;
+
+        position: relative;
+
+    }
+
+    .socialMedia a::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: .6px;
+        background-color: white;
+    
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 450ms ease;
+    
+    }
+    
+    .socialMedia a:hover::after {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+
+
+
+    @media (max-width: 831px) {
+        
+
+        .socialMedia {
+            display: none;
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.restOfPage {
+    margin-top: 2.2em;
+}
+
+
+
+.restOfPage > h1 p {
+    font-weight: 400;
+
+    margin-left: 2.7em;
+    text-transform: uppercase;
+
+    background-color: #384447;
+    width: 5em;
+    color: white;
+    border-radius: 100vh;
+
+    padding: .1em 0;
+
+    display: flex;
+    justify-content: center;
+
+    font-size: 26px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ************************
+    BOÎTE DE l'UTILISATEUR
+   ************************ */
+
+
+.infosPerso {
+    margin-top: 3em;
+    margin-left: 4.5em;
+    padding: 2em;
+
+    background-color: #F3F3F3;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 30em;
+}
+
+.logoInfo {
+    width: 5.5em;
+    height: 5.5em;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.infosPerso svg {
+   width: 3em;
+   
+  
+}
+
+.infos-sub {
+    margin-left: 1em;
+}
+
+.infos-sub h2 {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.infos-sub ul {
+    list-style-type: none;
+    color: #8b8b8b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mesPropositions {
+    margin-top: 10em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mesPropositions h1 {
+    margin-left: 2em;
+
+    margin-bottom: 2em;
+    margin-right: auto;
+   
+    font-weight: 400;
+
+    margin-left: 2.7em;
+    text-transform: uppercase;
+
+    background-color: #384447;
+    width: 7em;
+    color: white;
+    border-radius: 100vh;
+
+    display: flex;
+    justify-content: center;
+
+    font-size: 26px;
+
+    padding: .1em 0;
+}
+
+
+
+
+@media (max-width: 634px) {
+    .infosPerso {
+        margin-left: 1.5em;
+    }
+
+    .restOfPage > h1 p {
+        margin-left: 1em;
+    }
+
+    .mesPropositions h1 {
+        margin-left: .8em;
+    }
+}
+
+@media (max-width: 532px) {
+    .infosPerso {
+        flex-direction: column;
+        width: auto;
+        margin-right: 1.5em;
+    }
+
+    .logoInfo {
+        margin-bottom: 2em;
+
+        width: 6.5em;
+        height: 6.5em;
+    }
+
+    .infos-sub {
+        margin-left: 0;
+    }
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ******************
+    BOÎTES D'ERRATA
+   ****************** */
+
+.erratumBox {
+    margin-top: 1.5em;
+    width: 60%;
+
+
+    
+}
+
+
+/* ----------- GENERAL : boîte de présentation -------------- */
+
+    .erratumTitle {   /* infos générales de l'errratum */
+        width: 90%;
+        height: 100px;
+        background: #F3F3F3;
+        border-radius: 8px;
+        box-shadow: 0px 0px 3px 0px rgba(132, 132, 132, 0.15);
+
+        
+
+        display: flex;
+        cursor: pointer;
+        
+        
+    }
+
+    .titleLogo {  /* icône "attention" */
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .titleLogo::after {
+        content: '';
+        position: absolute;
+        height: 75%;
+        width: 130%;
+        top: calc(100px / 8);
+        left: 0;
+        
+
+        border-right: 1px solid #b1b1b1;
+    }
+
+    .erratumTitle ion-icon {
+        color: #FFAA00;
+        font-size: 41px;
+        margin-left: .4em;
+    }
+
+
+
+    .titleInfo {  /* infos de l'erratum */
+        margin-left: 2em;
+        width: 85%;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 1px 1px;
+        grid-template-areas: "date promotion annale" "matière question pseudo";
+
+        justify-items: center;
+        align-items: center;
+    }
+
+
+    .date { grid-area: date; }
+
+    .promotion { grid-area: promotion; color:  #9F3378; font-weight: 600;}
+
+    .annale { grid-area: annale; color:  #9F3378; font-weight: 600;}
+
+    .matière { grid-area: matière; }
+
+    .question { grid-area: question; }
+
+    .pseudo { grid-area: pseudo; }
+
+    .titleInfo p span {
+        font-style: italic;
+        color: #8b8b8b;
+    }
+
+
+
+
+
+
+
+
+
+
+/* ----------- IMAGE -------------- */
+
+    .erratumImage {   /* sous-boîte pour la photo de l'erratum */
+        width: 90%;
+        height: 16em;
+        background: #F3F3F3;
+        border-radius: 8px;
+        box-shadow: 0px 0px 3px 0px rgba(132, 132, 132, 0.15);
+    }
+
+
+
+
+
+
+
+
+
+
+/* ----------- COMMENTAIRE -------------- */
+    
+
+    .erratumText {  /* sous-boîte pour le commentaire de l'utilisateur */
+        width: 90%;
+        height: 20em;
+        background: #F3F3F3;
+        border-radius: 8px;
+        box-shadow: 0px 0px 3px 0px rgba(132, 132, 132, 0.15);
+    }
+
+    .erratumText p:nth-child(2) {  /* info de proposition de l'erratum */
+        font-style: italic;
+        padding-left: .5em;
+        padding-top: .5em;
+
+        display: none;
+    }
+
+
+
+
+
+/* ----------- CONTRÔLE -------------- */    
+
+
+    .erratumControls {  /* sous-boîte pour les "actions" à réaliser sur l'erratum */
+        width: 90%;
+        height: 4em;
+        background: #F3F3F3;
+        border-radius: 8px;
+        box-shadow: 0px 0px 3px 0px rgba(132, 132, 132, 0.15);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .erratumControls ion-icon {
+        font-size: 28px;
+    }
+
+    .erratumControls p {
+        display: flex;
+        align-items: center;
+    }
+
+    .erratumControls a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    .erratumControls a span {
+        text-transform: uppercase;
+        color: black;
+        font-weight: 600;
+        margin-left: .7em;
+        font-size: 14px;
+        position: relative;
+    }
+
+    .erratumControls p a span::after {
+        position: absolute;
+        width: 200%;
+        height: 190%;
+        top: -.5em;
+        left: -3em;
+        content: '';
+        background-color: transparent;
+    }
+
+            /* icônes de contrôle */
+            .modifErr {
+            
+                color: #384447;
+            
+            }
+
+            .supprErr {
+                color: #9F3378;
+            }
+
+            .supprErr.wobbleEffect,
+            .modifErr.wobbleEffect {
+                animation: wobble 700ms ease-in-out 1;
+            }
+
+           
+
+            .upvoteErr,
+            .downvoteErr {
+                color: #b9c9cc;
+            }
+
+            .upvoteErr.bounceEffect,
+            .downvoteErr.bounceEffect {
+                animation: bounce 700ms ease-in-out 1;
+            }
+
+
+            .downvoteErr + span {
+                margin-bottom: .4em;
+            }
+
+            .upvoteErr + span {
+                margin-top: .3em;
+            }
+
+            
+        
+
+            @keyframes wobble {
+                16.65% {
+                    transform: rotate(10deg);
+                }
+                33.3% {
+                  transform: rotate(-8deg);
+                }
+                49.95% {
+                    transform: rotate(6deg);
+                }
+                66.6% {
+                   
+                  transform: rotate(4deg);
+                }
+                83.25% {
+                    transform: rotate(-6deg);
+                }
+                100% {
+                    transform: rotate(0deg);
+                }
+              }
+
+            @keyframes bounce {
+                16.65% {
+                    transform: scale(1.3);
+                }
+                33.3% {
+                  transform: scale(0.8);
+                }
+                49.95% {
+                    transform: scale(1.2);
+                }
+                66.6% {
+                   
+                  transform: scale(0.9);
+                }
+                83.25% {
+                    transform: scale(1.1);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }  
+           
+
+
+
+    .erratumImage p:first-child,
+    .erratumText p:first-child {
+            font-style: italic;
+            color: #8b8b8b;
+            padding-left: .5em;
+            padding-top: .5em;
+    }
+
+
+
+
+
+
+/* ----------- ANIMATION -------------- */
+
+    /* pour les animations d'ouverture */
+    .erratumSubContent {
+        display: none;
+    }
+
+    .erratumImage,
+    .erratumText,
+    .erratumControls {
+        opacity: 0;
+        transform: rotate(15deg) translateX(-10%);
+        transform-origin: top left;
+
+        transition: transform 300ms ease, opacity 300ms ease;
+
+
+    }
+
+
+    .erratumImage.open,
+    .erratumText.open,
+    .erratumControls.open {
+        opacity: 1;
+        transform: rotate(0deg) translateX(0);
+
+    }
+
+
+
+
+/* ----------- RESPONSIVE -------------- */
+
+    @media (max-width: 1379px) {
+        .erratumTitle,
+        .erratumImage,
+        .erratumText,
+        .erratumControls {
+            width: 100%;
+        }
+
+        .erratumBox {
+            width: 70%;
+        }
+    }
+
+    @media (max-width: 1125px) {
+
+        .erratumBox {
+            width: 80%;
+        }
+    }
+
+    @media (max-width: 1019px) {
+
+        .erratumBox {
+            width: 90%;
+        }
+
+        .titleInfo {
+            margin-left: 1em;
+        }
+    }
+
+    @media (max-width: 581px) {
+        .erratumControls p a span {
+            display: none;
+        }
+
+
+        .titleInfo {  /* on modifie le grid */
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-areas: "date promotion" "annale matière" "question pseudo";
+        }
+
+        .titleInfo p span {
+            display: none;
+        }
+
+        
+    
+    }
+
+    @media (max-width: 437px) {
+        .date,
+        .pseudo {  /* on retire et déplace des infos de la boîte de présentation */
+            display: none;
+        }
+
+        .titleInfo {  
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: "promotion annale" "matière question";
+        }
+
+        .erratumText p:nth-child(2) {
+            display: block;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* **********
+    FOOTER
+   ********** */
+
+    footer {
+        background-color: #384447;
+        height: 3em;
+
+        margin-top: 4em;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        color: white;
+    }
+    
+    footer ul {
+        display: none;
+    }
+    
+    footer a {
+        color: #9F3378;
+        transition: filter 300ms ease;
+    }
+    
+    footer p a:hover {
+        filter: brightness(1.2);
+    }
+
+    @media (max-width: 831px) {
+        footer {
+            margin-left: 0;
+            flex-direction: column;
+            height: 6em;
+        }
+
+        footer ul {
+            display: flex;
+            list-style-type: none;
+            justify-content: center;
+
+            margin-bottom: 1em;
+        }
+
+        footer ul li {
+            background-color: white;
+            height: 2em;
+            width: 2em;
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        footer ul li a::after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 150%;
+            top: -.3em;
+            left: -.3em;
+            background-color: transparent;
+        }
+
+        footer ul li a {
+            transition: transform 500ms ease;
+        }
+
+        footer ul li:hover > a {
+            transform: rotate(360deg);
+        }
+
+        footer ul li:first-child {
+            margin-right: .5em;
+        }
+
+        footer ul li:last-child {
+            margin-left: .5em;
+        }
+
+        footer ul li:first-child a {
+            color: #3b5998;
+        }
+
+        footer ul li:last-child a {
+            color: #00acee;
+        }
+    }

@@ -1,0 +1,1108 @@
+/* C2SU */
+
+/* modifié et crée par Eol (Mayeul) en juin 2020 */
+
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+/* **********
+    HEADER
+   ********** */
+
+
+header {
+    width: 100%;
+    height: 9em;
+
+    background-color: #252C2F;
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    
+}
+
+
+
+
+
+            /* hamburger */
+            .iconHam {
+                
+                width: 2em;
+                height: 3em;
+                cursor: pointer;
+
+                display: none;
+                position: relative;
+                
+            }
+
+            .iconHam::after {   /* élargir la zone cliquable du hamburger */
+                content: '';
+                position: absolute;
+                top: 0;
+                left: .35em;
+
+                width: 170%;
+                height: 110%;
+                background-color: transparent;
+            }
+
+            .hamburger {
+                width: 2em;
+                height: 0.25em;
+                background: #fff;
+                
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                transition: 500ms;
+                position: relative;
+                top: 1.5em;
+                left: 1em;
+            }
+
+            .hamburger::after,
+            .hamburger::before {
+                content: '';
+                position: absolute;
+                width: 2em;
+                height: 0.25em;
+                background: #fff;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                transition: 500ms;
+
+            }
+
+            .hamburger::before {
+                top: -.6em;
+            }
+
+            .hamburger::after {
+                top: .6em;
+            }
+
+
+            .iconHam.active .hamburger {
+                background: rgba(0, 0, 0, 0);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+
+            }
+
+            .iconHam.active .hamburger::before {
+                top: 0;
+                transform: rotate(45deg);
+
+            }
+
+            .iconHam.active .hamburger::after {
+                top: 0;
+                transform: rotate(135deg);
+                
+            }
+
+
+
+            
+
+
+
+.corpoLogo {    /* logo de la corpo */
+    width: 7.5em;
+    margin-left: 5em;
+}
+
+
+
+
+
+header h1 {
+    margin-left: .5em;
+}
+
+header h1 span {
+    font-family: 'Dancing Script', sans-serif;
+}
+
+    @media (max-width: 873px) {
+        .corpoLogo {
+            margin-left: 2em;
+        }
+    }
+
+    @media (max-width: 544px) {
+        .corpoLogo {
+            display: none;
+        }
+        
+        header h1 {
+            margin-left: 2em;
+        }
+    }
+
+    @media (max-width: 414px) {
+        
+        header h1 {
+            margin-left: 1.5em;
+        }
+    }
+
+
+
+
+
+
+
+.iconHeader {   /* div avec les réseaux et le profil à droite du header */
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+    .userProfile {   /* profil */
+        
+        border-radius: 100vh;
+        background-color: white;
+        padding: 8px 12px;
+
+
+    
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 200;
+        
+
+    }
+
+    .userProfile a {
+        display: flex;
+        align-items: center;
+        color: #252C2F;
+    }
+
+    .userProfile ion-icon {
+        color: #252C2F;
+        position: relative;
+    }
+
+    @media (max-width: 591px) {
+        .userProfile {
+            border-radius: 50%;
+            width: 2.5em;
+        }
+
+        .userProfile a p {
+            display: none;
+        }
+
+        .userProfile a ion-icon {
+            font-size: 22px;
+            margin-left: .2em;
+        }
+    }
+
+    @media (max-width: 414px) {
+        .userProfile {
+            margin-left: .4em;
+        }
+    }
+
+    
+
+
+
+    .socialMedia {  /* réseaux */
+        border-radius: 100vh;
+
+
+        margin-left: 1.5em;
+        margin-right: 4em;
+        
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .socialMedia a {
+        text-transform: uppercase;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 200;
+
+        position: relative;
+
+    }
+
+    .socialMedia a::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: .6px;
+        background-color: white;
+    
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 450ms ease;
+    
+    }
+    
+    .socialMedia a:hover::after {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+
+
+
+    @media (max-width: 831px) {
+        .iconHam {
+            display: block;
+        }
+
+        .socialMedia {
+            display: none;
+        }
+
+        .userProfile {
+            margin-right: 2em;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************
+      SIDEBAR
+   ************ */
+
+
+
+/* recherche de la sidebar */
+
+.sidebar {
+    height: 100vh;
+    
+    width: 17em;
+
+    position: absolute;
+    left: 0;
+    top: 9em;
+    bottom: 0;
+    z-index: 5;
+
+    background-color: #384447;
+
+    margin-bottom: -5000px; 
+    padding-bottom: 5000px; 
+
+    transition: margin-left 300ms cubic-bezier(.95,.05,.8,.04);
+}
+
+.sidebar.openMobile {
+    margin-left: 0;
+   
+}
+
+
+.sidebar p {
+    color: white;
+    font-weight: bold;
+    margin-top: 3em;
+    margin-bottom: .3em;
+
+   
+}
+
+.sidebar select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 10em;
+    background: none;
+    border: none;
+    padding: 4px 10px;
+	border: 1px solid #CCC;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	-webkit-border-radius:	4px;
+	-moz-border-radius: 	4px;
+	border-radius: 			4px;
+	-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.1) inset;
+	-moz-box-shadow: 	0px 1px 2px rgba(0,0,0,0.1) inset;
+    box-shadow: 		0px 1px 2px rgba(0,0,0,0.1) inset;
+
+    
+    
+    background-color: white;
+}
+
+.matiereSelect {
+    margin-top: 4em;
+}
+
+.matiereSelect,
+.promoSelect,
+.yearSelect {
+    margin-left: 3em;
+    position: relative;
+}
+
+.matiereSelect::before,
+.promoSelect::before,
+.yearSelect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -3em;
+    height: 100%;
+    width: .4em;
+
+    background-color: #9F3378;
+}
+
+
+
+
+
+
+
+/* 'à propos' et 'CGU' en bas de la sidebar */
+
+.plusInfo {
+   
+   display: flex;
+   flex-wrap: wrap;
+   width: 100%;
+
+   justify-content: center;
+
+   position: absolute;
+   bottom: 1.5em;
+}
+
+.plusInfo a {
+    color: white;
+    position: relative;
+
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    font-weight: 200;
+    font-size: 14px;
+    
+    
+}
+
+.plusInfo a:first-child {
+    margin-right: .8em;
+}
+
+.plusInfo a:last-child {
+    margin-left: .8em;
+}
+
+.plusInfo a::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: .7px;
+    background-color: white;
+
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease;
+
+}
+
+.plusInfo a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.restOfPage {
+    margin-left: 17em;
+    margin-top: 2.2em;
+}
+
+
+/* ******************
+    TAB NAVIGATION
+   ****************** */
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 3em;
+    
+
+
+}
+
+.tab {
+    cursor: pointer;
+    width: 13%;
+    padding-bottom: .4em; 
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase;
+
+    transition: border-bottom 250ms ease;
+    
+}
+
+.tab:hover {
+    border-bottom: 1px solid #c4ccce;
+}
+
+.tab.active {
+   border-bottom: 1px solid #384447;
+   
+}
+
+
+
+
+
+
+@media (max-width: 831px) {
+    .sidebar {
+        margin-left: -17em;
+    }
+
+    .restOfPage {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 647px) {
+    .tab {
+        width: 20%;
+    }
+}
+
+
+
+
+
+
+
+
+[data-tab-content] {
+    display: none;
+}
+  
+.active[data-tab-content] {
+    display: block;
+}
+
+
+/* bouton d'ajout d'une proposition d'erratum */
+.addErrata {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    background-color: #9F3378;
+    color: white;
+
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.addErrata p {
+    font-size: 34px;
+    font-family: 'Montserrat';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ******************
+    BOÎTES D'ERRATA
+   ****************** */
+
+.erratumBox {
+    margin-top: 1.5em;
+    width: 60%;
+
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+
+
+
+    
+}
+
+
+/* ----------- GENERAL : boîte de présentation -------------- */
+
+    .erratumTitle {   /* infos générales de l'errratum */
+        width: 90%;
+        height: 100px;
+        background: #F3F3F3;
+        border-radius: 8px;
+        box-shadow: 0px 0px 3px 0px rgba(132, 132, 132, 0.15);
+
+        
+
+        display: flex;
+        cursor: pointer;
+        
+        
+    }
+
+    .titleLogo {  /* icône "attention" */
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .titleLogo::after {
+        content: '';
+        position: absolute;
+        height: 75%;
+        width: 130%;
+        top: calc(100px / 8);
+        left: 0;
+        
+
+        border-right: 1px solid #b1b1b1;
+    }
+
+    .erratumTitle ion-icon {
+        color: #FFAA00;
+        font-size: 41px;
+        margin-left: .4em;
+    }
+
+
+
+    .titleInfo {  /* infos de l'erratum */
+        margin-left: 2em;
+        width: 85%;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 1px 1px;
+        grid-template-areas: "date promotion annale" "matière question pseudo";
+
+        justify-items: center;
+        align-items: center;
+    }
+
+
+    .date { grid-area: date; }
+
+    .promotion { grid-area: promotion; color:  #9F3378; font-weight: 600;}
+
+    .annale { grid-area: annale; color:  #9F3378; font-weight: 600;}
+
+    .matière { grid-area: matière; }
+
+    .question { grid-area: question; }
+
+    .pseudo { grid-area: pseudo; }
+
+    .titleInfo p span {
+        font-style: italic;
+        color: #8b8b8b;
+    }
+
+
+
+
+
+
+
+
+
+
+/* ----------- IMAGE -------------- */
+
+    .erratumImage {   /* sous-boîte pour la photo de l'erratum */
+        width: 90%;
+        height: 16em;
+        background: #F3F3F3;
+        border-radius: 8px;
+        box-shadow: 0px 0px 3px 0px rgba(132, 132, 132, 0.15);
+    }
+
+    
+
+
+
+
+
+/* ----------- COMMENTAIRE -------------- */
+
+    .erratumText {  /* sous-boîte pour le commentaire de l'utilisateur */
+        width: 90%;
+        height: 20em;
+        background: #F3F3F3;
+        border-radius: 8px;
+        box-shadow: 0px 0px 3px 0px rgba(132, 132, 132, 0.15);
+    }
+
+    .erratumText p:nth-child(2) {  /* info de proposition de l'erratum */
+        font-style: italic;
+        padding-left: .5em;
+        padding-top: .5em;
+
+        display: none;
+    }
+
+
+
+
+
+
+
+
+/* ----------- CONTRÔLE -------------- */   
+
+    .erratumControls {  /* sous-boîte pour les "actions" à réaliser sur l'erratum */
+        width: 90%;
+        height: 4em;
+        background: #F3F3F3;
+        border-radius: 8px;
+        box-shadow: 0px 0px 3px 0px rgba(132, 132, 132, 0.15);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .erratumControls ion-icon {
+        font-size: 28px;
+    }
+
+    .erratumControls p {
+        display: flex;
+        align-items: center;
+    }
+
+    .erratumControls a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    .erratumControls a span {
+        text-transform: uppercase;
+        color: black;
+        font-weight: 600;
+        margin-left: .7em;
+        font-size: 14px;
+        position: relative;
+    }
+
+    .erratumControls p a span::after {
+        position: absolute;
+        width: 200%;
+        height: 190%;
+        top: -.5em;
+        left: -3em;
+        content: '';
+        background-color: transparent;
+    }
+
+            /* icônes de contrôle */
+            .modifErr {
+            
+                color: #384447;
+            
+            }
+
+            .supprErr {
+                color: #9F3378;
+            }
+
+            .supprErr.wobbleEffect,
+            .modifErr.wobbleEffect {
+                animation: wobble 700ms ease-in-out 1;
+            }
+
+           
+
+            .upvoteErr,
+            .downvoteErr {
+                color: #b9c9cc;
+            }
+
+            .upvoteErr.bounceEffect,
+            .downvoteErr.bounceEffect {
+                animation: bounce 700ms ease-in-out 1;
+            }
+
+
+            .downvoteErr + span {
+                margin-bottom: .4em;
+            }
+
+            .upvoteErr + span {
+                margin-top: .3em;
+            }
+
+            
+        
+
+            @keyframes wobble {
+                16.65% {
+                    transform: rotate(10deg);
+                }
+                33.3% {
+                  transform: rotate(-8deg);
+                }
+                49.95% {
+                    transform: rotate(6deg);
+                }
+                66.6% {
+                   
+                  transform: rotate(4deg);
+                }
+                83.25% {
+                    transform: rotate(-6deg);
+                }
+                100% {
+                    transform: rotate(0deg);
+                }
+              }
+
+            @keyframes bounce {
+                16.65% {
+                    transform: scale(1.3);
+                }
+                33.3% {
+                  transform: scale(0.8);
+                }
+                49.95% {
+                    transform: scale(1.2);
+                }
+                66.6% {
+                   
+                  transform: scale(0.9);
+                }
+                83.25% {
+                    transform: scale(1.1);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }  
+           
+
+
+
+    .erratumImage p:first-child,
+    .erratumText p:first-child {
+            font-style: italic;
+            color: #8b8b8b;
+            padding-left: .5em;
+            padding-top: .5em;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------- ANIMATION -------------- */ 
+    
+    /* pour les animations d'ouverture */
+    .erratumSubContent {
+        display: none;
+    }
+
+    .erratumImage,
+    .erratumText,
+    .erratumControls {
+        opacity: 0;
+        transform: rotate(15deg) translateX(-10%);
+        transform-origin: top left;
+
+        transition: transform 300ms ease, opacity 300ms ease;
+
+
+    }
+
+
+    .erratumImage.open,
+    .erratumText.open,
+    .erratumControls.open {
+        opacity: 1;
+        transform: rotate(0deg) translateX(0);
+
+    }
+
+
+
+
+
+
+
+
+
+
+/* ----------- RESPONSIVE -------------- */
+
+
+    @media (max-width: 1379px) {
+        .erratumTitle,
+        .erratumImage,
+        .erratumText,
+        .erratumControls {
+            width: 100%;
+        }
+
+        .erratumBox {
+            width: 70%;
+        }
+    }
+
+    @media (max-width: 1125px) {
+
+        .erratumBox {
+            width: 80%;
+        }
+    }
+
+    @media (max-width: 1019px) {
+
+        .erratumBox {
+            width: 90%;
+        }
+
+        .titleInfo {
+            margin-left: 1em;
+        }
+    }
+
+    @media (max-width: 581px) {
+        .erratumControls p a span {
+            display: none;
+        }
+
+
+        .titleInfo {  
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-areas: "date promotion" "annale matière" "question pseudo";
+        }
+
+        .titleInfo p span {
+            display: none;
+        }
+
+        
+    
+    }
+
+    @media (max-width: 437px) {
+        .date,
+        .pseudo {
+            display: none;
+        }
+
+        .titleInfo {  
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: "promotion annale" "matière question";
+        }
+
+        .erratumText p:nth-child(2) {
+            display: block;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* **********
+    FOOTER
+   ********** */   
+
+
+    footer {
+        background-color: #384447;
+        height: 3em;
+        margin-left: 17em;
+
+        margin-top: 4433px;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        color: white;
+    }
+    
+    footer ul {
+        display: none;
+    }
+    
+    footer a {
+        color: #9F3378;
+        transition: filter 300ms ease;
+    }
+    
+    footer p a:hover {
+        filter: brightness(1.2);
+    }
+
+    @media (max-width: 831px) {
+        footer {
+            margin-left: 0;
+            flex-direction: column;
+            height: 6em;
+        }
+
+        footer ul {
+            display: flex;
+            list-style-type: none;
+            justify-content: center;
+
+            margin-bottom: 1em;
+        }
+
+        footer ul li {
+            background-color: white;
+            height: 2em;
+            width: 2em;
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        footer ul li a::after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 150%;
+            top: -.3em;
+            left: -.3em;
+            background-color: transparent;
+        }
+
+        footer ul li a {
+            transition: transform 500ms ease;
+        }
+
+        footer ul li:hover > a {
+            transform: rotate(360deg);
+        }
+
+        footer ul li:first-child {
+            margin-right: .5em;
+        }
+
+        footer ul li:last-child {
+            margin-left: .5em;
+        }
+
+        footer ul li:first-child a {
+            color: #3b5998;
+        }
+
+        footer ul li:last-child a {
+            color: #00acee;
+        }
+    }

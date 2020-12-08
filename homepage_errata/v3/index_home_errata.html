@@ -1,0 +1,391 @@
+<!-- ------ C2SU ------ -->
+
+<!-- modifié et crée par Eol (Mayeul) en juin 2020 -->
+
+<!-- site d'ERRATA by C2SU -->
+
+
+<!DOCTYPE html>
+<html lang="fr" id="top">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Errata C2SU</title>
+
+    <!-- link CSS -->
+    <link rel="stylesheet" type="text/css" href="main_home_errata.css">
+
+
+
+
+
+    <!-- link police 'Source Sans Pro' -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900&display=swap" rel="stylesheet">
+
+    <!-- link police 'Dancing Script' -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+    <!-- link police 'Montserrat' -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap" rel="stylesheet">
+
+
+
+
+
+    <!-- script JavaScript principal -->
+    <script type="text/javascript" defer src="script_home_errata.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+    <!-- Link Pack 'Ionicons' -->
+    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- FontAwesome -->
+    <script type="text/javascript" defer
+        src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <!-- header  -->
+        <div class="iconHam">
+            <div class="hamburger"></div>
+        </div>
+
+        <img src="images/c2su.png" alt="logo de C2SU" class="corpoLogo">
+        <h1>ERRATA &nbsp;<span>by</span>&nbsp; C2SU</h1>
+
+        <div class="iconHeader">
+            <div class="userProfile">
+                <a href="" title="Profil">
+                    <ion-icon name="person"></ion-icon> &nbsp; <p>Profil</p>
+                </a>
+            </div>
+            <div class="socialMedia">
+                <a href="">facebook</a>
+                &nbsp; &nbsp; &nbsp;
+                <a href="">instagram</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- sidebar à gauche avec le choix de filtrage des errata -->
+        <div class="sidebar">
+            <div class="matiereSelect">
+                <p>Choisir une matière</p>
+                <select name="matiere" id="matiere">
+                    <option value="1"></option>
+                    <option value="2"></option>
+                    <option value="3"></option>
+                    <option value="4"></option>
+                    <option value="5"></option>
+                    <option value="6"></option>
+                    <option value="7"></option>
+                    <option value="8"></option>
+                    <option value="9"></option>
+
+                </select>
+            </div>
+
+            <div class="promoSelect">
+                <p>Choisir une promotion</p>
+                <select name="promo" id="promo">
+                    <option value="1">DFGSM2 (P2)</option>
+                    <option value="2">DFGSM3 (D1)</option>
+                    <option value="3">DFASM1 (D2)</option>
+                    <option value="4">DFASM2 (D3)</option>
+                    <option value="5">DFASM3 (D4)</option>
+
+                </select>
+            </div>
+
+            <div class="yearSelect">
+                <p>Choisir une année</p>
+                <select name="year" id="year">
+                    <option value="1">2012</option>
+                    <option value="2">2013</option>
+                    <option value="3">2014</option>
+                    <option value="4">2015</option>
+                    <option value="5">2016</option>
+                    <option value="6">2017</option>
+                    <option value="7">2018</option>
+                    <option value="8">2019</option>
+                    <option value="9">2020</option>
+
+                </select>
+            </div>
+
+            <div class="plusInfo">
+                <a href="">à propos</a>
+                &nbsp; &nbsp; &nbsp;
+                <a href="" title="Conditions Générales d'Utilisation">CGU</a>
+            </div>
+        </div>
+
+
+        <!-- contenu de la page (hors header et sidebar) -->
+        <div class="restOfPage">
+
+
+            <!-- tabs d'accès aux différentes catégories d'errata -->
+            <div class="errataTabs">
+                <ul class="tabs">
+                    <li data-tab-target="#recent" class="tab active">Errata récents</li>
+                    <li data-tab-target="#trend" class="tab">Trending</li>
+                    <li class="addErrata" title="Ajouter une proposition d'erratum">
+                        <p>+</p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- contenu des tabs -->
+            <div class="tabContent">
+                <div id="recent" data-tab-content class="active">
+                    <!-- boîte pour l'erratum -->
+                    <div class="erratumBox">
+                        <!-- sous-boîte de présentation de l'erratum : grandes infos -->
+                        <div class="erratumTitle">
+                            <div class="titleLogo">
+                                <ion-icon name="alert-circle"></ion-icon>
+                            </div>
+                            <div class="titleInfo">
+                                <p class="date"><span>Date : </span> &nbsp; 11/02/2020</p>
+                                <p class="promotion"><span>Promo : </span> &nbsp; DFGSM2 (P2)</p>
+                                <p class="annale"><span>Annale : </span> &nbsp; 2019</p>
+                                <p class="matière"><span>Matière : </span> &nbsp; Cardio</p>
+                                <p class="question"><span>Question : </span> &nbsp; 34 item C</p>
+                                <p class="pseudo"><span>Pseudo : </span> &nbsp; Eol</p>
+                            </div>
+                        </div>
+
+                        <div class="erratumSubContent">
+                            <div class="erratumImage">
+                                <p>Photo : </p>
+
+                            </div>
+                            <div class="erratumText">
+                                <p>Commentaire : </p>
+                                <p>proposé par <b>Eol</b> le <b>11/02/2020</b></p>
+
+                            </div>
+                            <div class="erratumControls">
+                                <p><a href="" title="Modifier la publication">
+                                        <ion-icon name="pencil" class="modifErr"></ion-icon>
+                                        <span>modifier</span> 
+                                    </a></p>
+                                <p><a href="" title="Supprimer la publication">
+                                        <ion-icon name="trash" class="supprErr"></ion-icon>
+                                        <span>supprimer</span> 
+                                    </a></p>
+
+                                <p><a href="" title="Approuver cette proposition d'erratum">
+                                        <ion-icon name="thumbs-up-sharp" class="upvoteErr"></ion-icon>
+                                        <span>upvote</span> 
+                                    </a></p>
+                                <p><a href="" title="Réfuter cette proposition d'erratum">
+                                        <ion-icon name="thumbs-down-sharp" class="downvoteErr"></ion-icon>
+                                        <span>downvote</span> 
+                                    </a></p>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="erratumBox">
+                        <!-- sous-boîte de présentation de l'erratum : grandes infos -->
+                        <div class="erratumTitle">
+                            <div class="titleLogo">
+                                <ion-icon name="alert-circle"></ion-icon>
+                            </div>
+                            <div class="titleInfo">
+                                <p class="date"><span>Date : </span> &nbsp; 11/02/2020</p>
+                                <p class="promotion"><span>Promo : </span> &nbsp; DFGSM2 (P2)</p>
+                                <p class="annale"><span>Annale : </span> &nbsp; 2019</p>
+                                <p class="matière"><span>Matière : </span> &nbsp; Cardio</p>
+                                <p class="question"><span>Question : </span> &nbsp; 34 item C</p>
+                                <p class="pseudo"><span>Pseudo : </span> &nbsp; Eol</p>
+                            </div>
+                        </div>
+
+                        <div class="erratumSubContent">
+                            <div class="erratumImage">
+                                <p>Photo : </p>
+
+                            </div>
+                            <div class="erratumText">
+                                <p>Commentaire : </p>
+                                <p>proposé par <b>Eol</b> le <b>11/02/2020</b></p>
+
+                            </div>
+                            <div class="erratumControls">
+                                <p><a href="" title="Modifier la publication">
+                                        <ion-icon name="pencil" class="modifErr"></ion-icon>
+                                        <span>modifier</span> 
+                                    </a></p>
+                                <p><a href="" title="Supprimer la publication">
+                                        <ion-icon name="trash" class="supprErr"></ion-icon>
+                                        <span>supprimer</span> 
+                                    </a></p>
+
+                                <p><a href="" title="Approuver cette proposition d'erratum">
+                                        <ion-icon name="thumbs-up-sharp" class="upvoteErr"></ion-icon>
+                                        <span>upvote</span> 
+                                    </a></p>
+                                <p><a href="" title="Réfuter cette proposition d'erratum">
+                                        <ion-icon name="thumbs-down-sharp" class="downvoteErr"></ion-icon>
+                                        <span>downvote</span> 
+                                    </a></p>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="erratumBox">
+                        <!-- sous-boîte de présentation de l'erratum : grandes infos -->
+                        <div class="erratumTitle">
+                            <div class="titleLogo">
+                                <ion-icon name="alert-circle"></ion-icon>
+                            </div>
+                            <div class="titleInfo">
+                                <p class="date"><span>Date : </span> &nbsp; 11/02/2020</p>
+                                <p class="promotion"><span>Promo : </span> &nbsp; DFGSM2 (P2)</p>
+                                <p class="annale"><span>Annale : </span> &nbsp; 2019</p>
+                                <p class="matière"><span>Matière : </span> &nbsp; Cardio</p>
+                                <p class="question"><span>Question : </span> &nbsp; 34 item C</p>
+                                <p class="pseudo"><span>Pseudo : </span> &nbsp; Eol</p>
+                            </div>
+                        </div>
+
+                        <div class="erratumSubContent">
+                            <div class="erratumImage">
+                                <p>Photo : </p>
+
+                            </div>
+                            <div class="erratumText">
+                                <p>Commentaire : </p>
+                                <p>proposé par <b>Eol</b> le <b>11/02/2020</b></p>
+
+                            </div>
+                            <div class="erratumControls">
+                                <p><a href="" title="Modifier la publication">
+                                        <ion-icon name="pencil" class="modifErr"></ion-icon>
+                                        <span>modifier</span> 
+                                    </a></p>
+                                <p><a href="" title="Supprimer la publication">
+                                        <ion-icon name="trash" class="supprErr"></ion-icon>
+                                        <span>supprimer</span> 
+                                    </a></p>
+
+                                <p><a href="" title="Approuver cette proposition d'erratum">
+                                        <ion-icon name="thumbs-up-sharp" class="upvoteErr"></ion-icon>
+                                        <span>upvote</span> 
+                                    </a></p>
+                                <p><a href="" title="Réfuter cette proposition d'erratum">
+                                        <ion-icon name="thumbs-down-sharp" class="downvoteErr"></ion-icon>
+                                        <span>downvote</span> 
+                                    </a></p>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+                <div id="trend" data-tab-content>
+                    <div class="erratumBox">
+                        <!-- sous-boîte de présentation de l'erratum : grandes infos -->
+                        <div class="erratumTitle">
+                            <div class="titleLogo">
+                                <ion-icon name="alert-circle"></ion-icon>
+                            </div>
+                            <div class="titleInfo">
+                                <p class="date"><span>Date : </span> &nbsp; 11/02/2020</p>
+                                <p class="promotion"><span>Promo : </span> &nbsp; DFGSM2 (P2)</p>
+                                <p class="annale"><span>Annale : </span> &nbsp; 2019</p>
+                                <p class="matière"><span>Matière : </span> &nbsp; Cardio</p>
+                                <p class="question"><span>Question : </span> &nbsp; 34 item C</p>
+                                <p class="pseudo"><span>Pseudo : </span> &nbsp; Eol</p>
+                            </div>
+                        </div>
+
+                        <div class="erratumSubContent">
+                            <div class="erratumImage">
+                                <p>Photo : </p>
+
+                            </div>
+                            <div class="erratumText">
+                                <p>Commentaire : </p>
+                                <p>proposé par <b>Eol</b> le <b>11/02/2020</b></p>
+
+                            </div>
+                            <div class="erratumControls">
+                                <p><a href="" title="Modifier la publication">
+                                        <ion-icon name="pencil" class="modifErr"></ion-icon>
+                                        <span>modifier</span> 
+                                    </a></p>
+                                <p><a href="" title="Supprimer la publication">
+                                        <ion-icon name="trash" class="supprErr"></ion-icon>
+                                        <span>supprimer</span> 
+                                    </a></p>
+
+                                <p><a href="#" title="Approuver cette proposition d'erratum">
+                                        <ion-icon name="thumbs-up-sharp" class="upvoteErr"></ion-icon>
+                                        <span>upvote</span> 
+                                    </a></p>
+                                <p><a href="" title="Réfuter cette proposition d'erratum">
+                                        <ion-icon name="thumbs-down-sharp" class="downvoteErr"></ion-icon>
+                                        <span>downvote</span> 
+                                    </a></p>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <br>
+                <br>
+            </div>
+
+            <br>
+            <br>
+
+
+
+            <div class="remonterEnHaut" title="Remonter en haut de la page">
+                <a href="#top"><ion-icon name="chevron-up-outline"></ion-icon></a>
+            </div>
+
+        </div>
+    </main>
+
+
+    <div style="clear: both"></div>
+    <footer>
+        <ul>
+            <li title="Facebook"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li title="Instagram"><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li title="Twitter"><a href="#"><i class="fab fa-twitter"></i></a></li>
+        </ul>
+
+        <p>&copy; &nbsp;<a href="">Team Info</a> pour C2SU - 2020</p>
+
+    </footer>
+
+</body>
+
+</html>

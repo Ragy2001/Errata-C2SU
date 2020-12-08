@@ -1,0 +1,629 @@
+/* C2SU */
+
+/* modifié et crée par Eol (Mayeul) en juin 2020 */
+
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* **********
+    HEADER
+   ********** */
+
+
+header {
+    width: 100%;
+    height: 9em;
+
+    background-color: #252C2F;
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    
+}
+
+
+
+
+
+
+
+            
+
+
+
+.corpoLogo {    /* logo de la corpo */
+    width: 7.5em;
+    margin-left: 5em;
+}
+
+
+
+
+
+header h1 {
+    margin-left: .5em;
+}
+
+header h1 span {
+    font-family: 'Dancing Script', sans-serif;
+}
+
+    @media (max-width: 873px) {
+        .corpoLogo {
+            margin-left: 2em;
+        }
+    }
+
+
+    @media (max-width: 438px) {
+        
+        header h1 {
+            margin-left: 0;
+            margin-right: .7em;
+        }
+    }
+
+    @media (max-width: 411px) {
+        .corpoLogo {
+            margin-left: 1em;
+        }
+
+        header h1 {
+            margin-left: .3em;
+        }
+    }
+
+
+
+
+
+
+
+.iconHeader {   /* div avec les réseaux et le profil à droite du header */
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+
+
+    .userProfile {   /* profil */
+            
+        border-radius: 100vh;
+        background-color: white;
+        padding: 8px 12px;
+
+
+
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 200;
+        
+
+    }
+
+    .userProfile a {
+        display: flex;
+        align-items: center;
+        color: #252C2F;
+    }
+
+    .userProfile ion-icon {
+        color: #252C2F;
+        position: relative;
+    }
+
+    @media (max-width: 591px) {
+        .userProfile {
+            border-radius: 50%;
+            width: 2.5em;
+        }
+
+        .userProfile a p {
+            display: none;
+        }
+
+        .userProfile a ion-icon {
+            font-size: 22px;
+            margin-left: .2em;
+        }
+    }
+
+    @media (max-width: 414px) {
+        .userProfile {
+            margin-left: .4em;
+        }
+    }
+    
+
+    
+
+
+
+    .socialMedia {  /* réseaux */
+        border-radius: 100vh;
+
+
+        margin-left: 1.5em;
+        margin-right: 4em;
+        
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .socialMedia a {
+        text-transform: uppercase;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 200;
+
+        position: relative;
+
+    }
+
+    .socialMedia a::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: .6px;
+        background-color: white;
+    
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 450ms ease;
+    
+    }
+    
+    .socialMedia a:hover::after {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+
+
+
+    @media (max-width: 831px) {
+        
+
+        .socialMedia {
+            display: none;
+        }
+
+        .userProfile {
+            margin-right: 2em;
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.restOfPage {
+    margin-top: 2.2em;
+}
+
+
+
+.restOfPage > h1 p {
+    font-weight: 400;
+
+    margin-left: 2.7em;
+    text-transform: uppercase;
+
+
+    font-size: 26px;
+}
+
+@media (max-width: 442px) {
+    .restOfPage > h1 p {
+        text-align: center;
+        margin-left: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* **********************
+    FORMULAIRE D'AJOUT
+   ********************** */
+
+
+
+form {
+    margin-top: 4em;
+    text-align: center;
+}
+
+form div {
+    margin-bottom: 2em;
+}
+
+form div label {
+    margin-right: 1em;
+    font-weight: 600; 
+}
+
+form div select,
+form div input,
+form div textarea {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 10em;
+    background: none;
+    border: none;
+    padding: 4px 10px;
+	border: 1px solid #CCC;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	-webkit-border-radius:	4px;
+	-moz-border-radius: 	4px;
+	border-radius: 			4px;
+	-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.1) inset;
+	-moz-box-shadow: 	0px 1px 2px rgba(0,0,0,0.1) inset;
+    box-shadow: 		0px 1px 2px rgba(0,0,0,0.1) inset;
+
+    
+    
+    background-color: white;
+}
+
+.promoSelect p,
+.matiereSelect p,
+.yearSelect p {
+    display: inline-block;
+    margin-right: 1em;
+    font-weight: 600;
+}
+
+form div label span {
+    font-style: italic;
+    color: #8b8b8b;
+}
+
+@media (max-width: 442px) {
+    .promoSelect p,
+    .matiereSelect p,
+    .yearSelect p {
+        display: block;
+        margin-right: 0;
+    }
+
+    form div label {
+        display: block;
+        margin-right: 0;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------- ajout d'une photo ---------------- */
+
+
+.addPhoto {
+    position: relative;
+}
+
+input[type="file"] {
+    border: none;
+    width: auto;
+    box-shadow: none;
+    padding: 0;
+
+    position: absolute;
+    top: -1.1em;
+    left: 50%;
+    transform: translate(-50%);
+
+    width: 40%;
+    height: 190%;
+    opacity: 0;
+
+   
+    
+}
+
+
+
+.addPhoto label span {   /* bouton qui remplace celui par défaut */
+    border-radius: 100vh;
+    background-color: #384447;
+    cursor: pointer;
+    padding: 8px 12px;
+    font-style: normal;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+    border: .7px solid #384447;
+
+    margin-left: .7em;
+
+    transition: background-color 250ms ease, color 250ms ease;
+
+
+
+    
+}
+
+.addPhoto label span:hover {
+    background-color: transparent;
+    border: .7px solid #384447;
+    color: #384447;
+}
+
+.addPhoto p {   /* pour afficher le nom du fichier importé */
+    display: inline-block;
+
+    font-style: italic;
+    color: #8b8b8b;
+}
+
+@media (max-width: 672px) {
+    .addPhoto p {
+        display: block;
+        margin-top: 1.5em;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 637px) {
+    input[type="file"] {
+        width: 80%;
+        height: 100%;
+    }
+ }
+
+
+
+
+
+
+
+
+
+/* -------------- ajout d'un commentaire ---------------- */
+
+form div textarea {
+    display: block;
+    width: auto;
+    margin: 0 auto;
+    margin-top: .5em;
+}
+
+@media (max-width: 870px) {
+    form div textarea {
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* --------- bouton de validation --------- */
+
+input[type="submit"] {
+
+    border-radius: 100vh;
+    background-color: #384447;
+    color: white;
+    
+    padding: 12px 16px;
+    border: none;
+    cursor: pointer;
+
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+
+    border: .7px solid transparent;
+  
+    transition: background-color 250ms ease, color 250ms ease, border 250ms ease;
+}
+
+input[type="submit"]:hover {
+    background-color: transparent;
+    border: .7px solid #384447;
+    color: #384447;
+
+}
+
+input[type="submit"]:active {
+    position: relative;
+    top: 1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* **********
+    FOOTER
+   ********** */
+
+
+
+    footer {
+        background-color: #384447;
+        height: 3em;
+
+       
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        color: white;
+    }
+    
+    footer ul {
+        display: none;
+    }
+    
+    footer a {
+        color: #9F3378;
+        transition: filter 300ms ease;
+    }
+    
+    footer p a:hover {
+        filter: brightness(1.2);
+    }
+
+    @media (max-width: 831px) {
+        footer {
+            margin-left: 0;
+            flex-direction: column;
+            height: 6em;
+        }
+
+        footer ul {
+            display: flex;
+            list-style-type: none;
+            justify-content: center;
+
+            margin-bottom: 1em;
+        }
+
+        footer ul li {
+            background-color: white;
+            height: 2em;
+            width: 2em;
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        footer ul li a::after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 150%;
+            top: -.3em;
+            left: -.3em;
+            background-color: transparent;
+        }
+
+        footer ul li a {
+            transition: transform 500ms ease;
+        }
+
+        footer ul li:hover > a {
+            transform: rotate(360deg);
+        }
+
+        footer ul li:first-child {
+            margin-right: .5em;
+        }
+
+        footer ul li:last-child {
+            margin-left: .5em;
+        }
+
+        footer ul li:first-child a {
+            color: #3b5998;
+        }
+
+        footer ul li:last-child a {
+            color: #00acee;
+        }
+    }

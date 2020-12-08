@@ -1,0 +1,453 @@
+/* C2SU */
+
+/* modifié et crée par Eol (Mayeul) en juin 2020 */
+
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+/* **********
+    HEADER
+   ********** */
+
+
+
+header {
+    width: 100%;
+    height: 9em;
+
+
+    background-color: #252C2F;
+    color: white;
+
+    position: relative;
+    z-index: 10;
+
+
+    display: flex;
+    align-items: center;
+    
+}
+
+
+header div:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+            
+
+
+
+.corpoLogo {    /* logo de la corpo */
+    width: 7.5em;
+    margin-left: 5em;
+}
+
+
+
+
+
+header h1 {
+    margin-left: .5em;
+    display: inline-block;
+}
+
+header h1 span {
+    font-family: 'Dancing Script', sans-serif;
+}
+
+
+
+
+
+
+
+
+
+.iconHeader {   /* div avec les réseaux et le profil à droite du header */
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+
+
+    
+
+
+
+    .socialMedia {  /* réseaux */
+        border-radius: 100vh;
+
+
+        margin-left: 1.5em;
+        margin-right: 4em;
+        
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .socialMedia a {
+        text-transform: uppercase;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 200;
+
+        position: relative;
+
+    }
+
+    .socialMedia a::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: .6px;
+        background-color: white;
+    
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 450ms ease;
+    
+    }
+    
+    .socialMedia a:hover::after {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+
+
+
+    @media (max-width: 831px) {
+        
+
+        .iconHeader {
+            display: none;
+        }
+
+        
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* **************
+    LOGIN BOX
+   ************** */
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+form {
+    background-color: #384447;
+    width: 30%;
+    color: rgba(255, 255, 255, .93);
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+@media (max-height: 481px) {
+    form {
+        margin-top: 4em;
+    }
+}
+
+@media (max-height: 416px) {
+    form {
+        margin-top: 8em;
+    }
+}
+
+@media (max-height: 351px) {
+    form {
+        margin-top: 12em;
+    }
+}
+
+form h1 {
+    text-transform: uppercase;
+    position: absolute;
+    top: 1em;
+    
+}
+
+form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: .5em;
+}
+
+label[for="numEtudiant"] {
+    margin-top: 7em;
+}
+
+#numEtudiant,
+#motDePasse,
+#anneePromo,
+#pseudonyme {
+    border-radius: 100vh;
+    border: none;
+    background-color: rgba(255, 255, 255, .93);
+    height: 2.4em;
+    width: 70%;
+
+    padding: 0 15px;
+
+    transition: background-color 350ms ease;
+}
+
+#numEtudiant,
+#pseudonyme {
+    margin-bottom: 2em;
+}
+
+#numEtudiant:focus,
+#motDePasse:focus,
+#anneePromo:focus,
+#pseudonyme:focus {
+    background-color: #9F3378;
+    outline: none;
+}
+
+#anneePromo {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
+.submitBtn {
+    margin-top: 6em;
+    margin-bottom: 4em;
+    
+
+    border-radius: 100vh;
+    background-color: white;
+    
+    padding: 12px 16px;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+
+    border: .7px solid transparent;
+  
+    transition: background-color 250ms ease, color 250ms ease, border 250ms ease;
+}
+
+.submitBtn:hover {
+    background-color: transparent;
+    border: .7px solid white;
+    color: white;
+
+}
+
+.submitBtn:active {
+    position: relative;
+    top: 1px;
+}
+
+
+@media (max-width: 962px) {
+    form {
+        width: 50%;
+    }
+}
+
+@media (max-width: 688px) {
+    form {
+        width: 70%;
+    }
+}
+
+@media (max-width: 580px) {
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .corpoLogo {
+        margin-left: 0;
+    }
+
+}    
+
+@media (max-width: 434px) {
+    form {
+        width: 90%;
+    }
+
+    header h1 {
+        margin-left: 0;
+    }
+
+}    
+
+@media (max-width: 372px) {
+    .corpoLogo {
+        margin-left: 2em;
+    }
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* **********
+    FOOTER
+   ********** */
+
+
+footer {
+    background-color: #384447;
+    height: 3em;
+    margin-top: 10em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+}
+
+footer ul {
+    display: none;
+}
+
+footer a {
+    color: #9F3378;
+    transition: filter 300ms ease;
+}
+
+footer a:hover {
+    filter: brightness(1.2);
+}
+
+@media (max-width: 831px) {
+    footer {
+        margin-left: 0;
+        flex-direction: column;
+        height: 6em;
+    }
+
+    footer ul {
+        display: flex;
+        list-style-type: none;
+        justify-content: center;
+
+        margin-bottom: 1em;
+    }
+
+    footer ul li {
+        background-color: white;
+        height: 2em;
+        width: 2em;
+        border-radius: 50%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+    }
+
+    footer ul li a::after {
+        content: '';
+        position: absolute;
+        width: 200%;
+        height: 150%;
+        top: -.3em;
+        left: -.3em;
+        background-color: transparent;
+    }
+
+    footer ul li a {
+        transition: transform 500ms ease;
+    }
+
+    footer ul li:hover > a {
+        transform: rotate(360deg);
+    }
+
+    footer ul li:first-child {
+        margin-right: .5em;
+    }
+
+    footer ul li:last-child {
+        margin-left: .5em;
+    }
+
+    footer ul li:first-child a {
+        color: #3b5998;
+    }
+
+    footer ul li:last-child a {
+        color: #00acee;
+    }
+}
